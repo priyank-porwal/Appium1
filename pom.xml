@@ -8,19 +8,19 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.7.0</version>
+			<version>3.4.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>5.0.4</version>
+			<version>5.0.0-BETA6</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.11</version>
+			<version>6.7</version>
 			<scope>test</scope>
 		</dependency>
 

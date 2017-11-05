@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="novSessionP1.launchApp">
+      <class name="novSessionP1.swipe">
         <methods>
-          <include name="f"/>
           <include name="AfterTest"/>
+          <include name="swipeHorizontal"/>
           <include name="BeforeTest"/>
         </methods>
-      </class> <!-- novSessionP1.launchApp -->
+      </class> <!-- novSessionP1.swipe -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -46,8 +46,8 @@ public class swipe {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//to handle pop up
-		driver.findElementByXPath("//android.widget.Checkbox").click();
-		driver.findElementById("andoid:id/button1").click();
+		driver.findElementByXPath("//android.widget.CheckBox").click();
+		driver.findElementById("android:id/button1").click();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.RelativeLayout")));
@@ -55,17 +55,58 @@ public class swipe {
 	}
 
 @Test
-public void swipeHorizontal() {
+public void swipeHorizontal() throws InterruptedException {
 	
+	Dimension size = driver.manage().window().getSize();
+	  System.out.println(size);
+	  int startx = (int)(size.width*0.70);
+	  int endx = (int)(size.width * 0.30);
+	  int starty = size.height/2;
+	  System.out.println("startx =" + startx +" ,endx= "+endx +", starty = "+starty);
+	  driver.swipe(startx, starty, endx, starty, 3000);
+	  driver.swipe(endx,starty,startx,starty,3000);
+	  Thread.sleep(2000); 
 	
 	
 }
+
+@Test
+public void swipeVertical() throws InterruptedException {
+	
+	Dimension size = driver.manage().window().getSize();
+	  System.out.println(size);
+	  int startx = (int)(size.height*0.70);
+	  int endx = (int)(size.height * 0.30);
+	  int starty = size.width/2;
+	  System.out.println("startx =" + startx +" ,endx= "+endx +", starty = "+starty);
+	  driver.swipe(startx, starty, endx, starty, 3000);
+	  driver.swipe(endx,starty,startx,starty,3000);
+	  Thread.sleep(2000); 
+}
+	  @Test(enabled=false)
+	  public void scrollUsingTouchAction1(){
+		  
+		  driver.findElementByXPath("android.widger.TextView[@text='Views']").click();
+		  
+		  TouchAction action = new TouchAction((MobileDriver) driver);
+		  
+		  WebElement ele1 = driver.findElementByXPath("//android.widget.TextView[@text = ]");
+		  int x = ele1.getLocation().getX();
+		  int y = ele1.getLocation().getY();
+		  
+		  action.press(x,y).waitAction(10000).moveTo(x, y+200).release().perform();
+		  
+		  
+	  }
+	
+	
 
 	
 		
 
 	
 
+	
 	@AfterTest
 	public void AfterTest() {
 
